@@ -5,18 +5,31 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>C'est la pause</title>
 	<link rel="stylesheet" href="lapause.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </head>
 <body>
 	<div id="Horloge">
-		<p>
+		<p id="pause">
 		Pas encore la pause :'( 
 		</p>
 	</div>
 
 <script type="text/javascript">
 	setInterval(function(){
-	 alert("C'est la pauuuuse"); 
-	}, 5000*60)
+
+		if($("#pause").text() == "C'est la pauuuuse :-)"){
+
+			$("#pause").text("C'est plus la pause :-(");
+			$("#pause").css("color", "red");
+		}
+		else{
+
+			$("#pause").text("C'est la pauuuuse :-)");
+			$("#pause").css("color", "green");
+		}
+		
+	}, 5000)
+
 </script>
 </body>
 </html>
